@@ -1,4 +1,4 @@
-package org.linlinjava.litemall.grpc.shiro;
+package org.linlinjava.litemall.admin.shiro;
 
 
 import org.apache.shiro.authc.*;

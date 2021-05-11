@@ -1,4 +1,4 @@
-package org.linlinjava.litemall.grpc.config;
+package org.linlinjava.litemall.admin.config;
 
 import com.github.xiaoymin.swaggerbootstrapui.annotations.EnableSwaggerBootstrapUI;
 import org.springframework.context.annotation.Bean;

@@ -1,4 +1,4 @@
-package org.linlinjava.litemall.grpc.server;
+package org.linlinjava.litemall.admin.server;
 
 import com.hanzhan.promotion.grpc.BotServiceGrpc;
 import com.hanzhan.promotion.grpc.PromServ;

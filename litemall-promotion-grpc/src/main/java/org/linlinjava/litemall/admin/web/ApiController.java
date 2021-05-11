@@ -1,4 +1,4 @@
-package org.linlinjava.litemall.grpc.web;
+package org.linlinjava.litemall.admin.web;
 
 import com.hanzhan.promotion.grpc.HelloRequest;
 import com.hanzhan.promotion.grpc.MyServiceGrpc;

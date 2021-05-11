@@ -1,4 +1,4 @@
-package org.linlinjava.litemall.grpc;
+package org.linlinjava.litemall.admin;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
