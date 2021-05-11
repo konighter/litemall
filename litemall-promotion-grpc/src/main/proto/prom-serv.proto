@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+package com.hanzhan.promotion.grpc;
+
+enum BotStatusEnum {
+  UNKOWN = 0;    // 未知
+  ACTIVE = 1;    // 在线活跃
+  INACTIVE = 2;  // 下线
+  DEL = 3;       // 删除
+  CHARGED = 4;   // 续费状态
+}
+
+enum BotTypeEnum {
+  WECHATY = 0;
+  DINGDING = 2;
+  LARK = 3;
+  WHATSAPP = 4;
+}
+
+
+message BotDetail {
+  int64   botId = 1;
+  string  botToken = 2;
+  string  bandWechatyId = 3;
+  BotTypeEnum botType = 4;
+  string  chargeToken = 5;
+  BotStatusEnum status = 6;
+  int64   createTime = 20;
+  int64   updateTime = 21;
+}
+
+
+message BotCreateRequest {
+  string botToken = 1;
+  string bindId = 2;        // 关联的微信ID
+  BotDetail bot = 5;
+}
+
+message BotCreateResponse {
+  int32 code = 1;
+  string msg = 2;
+  BotDetail bots = 3;
+}
+
+
+
+service BotService {
+  rpc createBot(BotCreateRequest) returns (BotCreateResponse){}
+
+
+}
+
