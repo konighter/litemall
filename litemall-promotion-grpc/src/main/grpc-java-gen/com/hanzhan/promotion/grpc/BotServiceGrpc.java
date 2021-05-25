@@ -14,29 +14,29 @@ public final class BotServiceGrpc {
   public static final String SERVICE_NAME = "com.hanzhan.promotion.grpc.BotService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<com.hanzhan.promotion.grpc.PromServ.BotOptRequest,
-      com.hanzhan.promotion.grpc.PromServ.BotOptResponse> getCreateBotMethod;
+  private static volatile io.grpc.MethodDescriptor<com.hanzhan.promotion.grpc.PromServ.BotCreateRequest,
+      com.hanzhan.promotion.grpc.PromServ.BotCreateResponse> getCreateBotMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "createBot",
-      requestType = com.hanzhan.promotion.grpc.PromServ.BotOptRequest.class,
-      responseType = com.hanzhan.promotion.grpc.PromServ.BotOptResponse.class,
+      requestType = com.hanzhan.promotion.grpc.PromServ.BotCreateRequest.class,
+      responseType = com.hanzhan.promotion.grpc.PromServ.BotCreateResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.hanzhan.promotion.grpc.PromServ.BotOptRequest,
-      com.hanzhan.promotion.grpc.PromServ.BotOptResponse> getCreateBotMethod() {
-    io.grpc.MethodDescriptor<com.hanzhan.promotion.grpc.PromServ.BotOptRequest, com.hanzhan.promotion.grpc.PromServ.BotOptResponse> getCreateBotMethod;
+  public static io.grpc.MethodDescriptor<com.hanzhan.promotion.grpc.PromServ.BotCreateRequest,
+      com.hanzhan.promotion.grpc.PromServ.BotCreateResponse> getCreateBotMethod() {
+    io.grpc.MethodDescriptor<com.hanzhan.promotion.grpc.PromServ.BotCreateRequest, com.hanzhan.promotion.grpc.PromServ.BotCreateResponse> getCreateBotMethod;
     if ((getCreateBotMethod = BotServiceGrpc.getCreateBotMethod) == null) {
       synchronized (BotServiceGrpc.class) {
         if ((getCreateBotMethod = BotServiceGrpc.getCreateBotMethod) == null) {
           BotServiceGrpc.getCreateBotMethod = getCreateBotMethod =
-              io.grpc.MethodDescriptor.<com.hanzhan.promotion.grpc.PromServ.BotOptRequest, com.hanzhan.promotion.grpc.PromServ.BotOptResponse>newBuilder()
+              io.grpc.MethodDescriptor.<com.hanzhan.promotion.grpc.PromServ.BotCreateRequest, com.hanzhan.promotion.grpc.PromServ.BotCreateResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "createBot"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.hanzhan.promotion.grpc.PromServ.BotOptRequest.getDefaultInstance()))
+                  com.hanzhan.promotion.grpc.PromServ.BotCreateRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.hanzhan.promotion.grpc.PromServ.BotOptResponse.getDefaultInstance()))
+                  com.hanzhan.promotion.grpc.PromServ.BotCreateResponse.getDefaultInstance()))
               .setSchemaDescriptor(new BotServiceMethodDescriptorSupplier("createBot"))
               .build();
         }
@@ -95,8 +95,8 @@ public final class BotServiceGrpc {
 
     /**
      */
-    public void createBot(com.hanzhan.promotion.grpc.PromServ.BotOptRequest request,
-        io.grpc.stub.StreamObserver<com.hanzhan.promotion.grpc.PromServ.BotOptResponse> responseObserver) {
+    public void createBot(com.hanzhan.promotion.grpc.PromServ.BotCreateRequest request,
+        io.grpc.stub.StreamObserver<com.hanzhan.promotion.grpc.PromServ.BotCreateResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateBotMethod(), responseObserver);
     }
 
@@ -106,8 +106,8 @@ public final class BotServiceGrpc {
             getCreateBotMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.hanzhan.promotion.grpc.PromServ.BotOptRequest,
-                com.hanzhan.promotion.grpc.PromServ.BotOptResponse>(
+                com.hanzhan.promotion.grpc.PromServ.BotCreateRequest,
+                com.hanzhan.promotion.grpc.PromServ.BotCreateResponse>(
                   this, METHODID_CREATE_BOT)))
           .build();
     }
@@ -129,8 +129,8 @@ public final class BotServiceGrpc {
 
     /**
      */
-    public void createBot(com.hanzhan.promotion.grpc.PromServ.BotOptRequest request,
-        io.grpc.stub.StreamObserver<com.hanzhan.promotion.grpc.PromServ.BotOptResponse> responseObserver) {
+    public void createBot(com.hanzhan.promotion.grpc.PromServ.BotCreateRequest request,
+        io.grpc.stub.StreamObserver<com.hanzhan.promotion.grpc.PromServ.BotCreateResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateBotMethod(), getCallOptions()), request, responseObserver);
     }
@@ -152,7 +152,7 @@ public final class BotServiceGrpc {
 
     /**
      */
-    public com.hanzhan.promotion.grpc.PromServ.BotOptResponse createBot(com.hanzhan.promotion.grpc.PromServ.BotOptRequest request) {
+    public com.hanzhan.promotion.grpc.PromServ.BotCreateResponse createBot(com.hanzhan.promotion.grpc.PromServ.BotCreateRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateBotMethod(), getCallOptions(), request);
     }
@@ -174,8 +174,8 @@ public final class BotServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.hanzhan.promotion.grpc.PromServ.BotOptResponse> createBot(
-        com.hanzhan.promotion.grpc.PromServ.BotOptRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.hanzhan.promotion.grpc.PromServ.BotCreateResponse> createBot(
+        com.hanzhan.promotion.grpc.PromServ.BotCreateRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateBotMethod(), getCallOptions()), request);
     }
@@ -201,8 +201,8 @@ public final class BotServiceGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_CREATE_BOT:
-          serviceImpl.createBot((com.hanzhan.promotion.grpc.PromServ.BotOptRequest) request,
-              (io.grpc.stub.StreamObserver<com.hanzhan.promotion.grpc.PromServ.BotOptResponse>) responseObserver);
+          serviceImpl.createBot((com.hanzhan.promotion.grpc.PromServ.BotCreateRequest) request,
+              (io.grpc.stub.StreamObserver<com.hanzhan.promotion.grpc.PromServ.BotCreateResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();

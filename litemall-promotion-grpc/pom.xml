@@ -44,12 +44,6 @@
     <dependency>
       <groupId>org.linlinjava</groupId>
       <artifactId>litemall-db</artifactId>
-      <exclusions>
-        <exclusion>
-          <groupId>com.google.protobuf</groupId>
-          <artifactId>protobuf-java</artifactId>
-        </exclusion>
-      </exclusions>
     </dependency>
     <dependency>
       <groupId>com.github.binarywang</groupId>

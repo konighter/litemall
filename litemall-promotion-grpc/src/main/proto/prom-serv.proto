@@ -21,7 +21,7 @@ enum BotTypeEnum {
 message BotDetail {
   int64   botId = 1;
   string  botToken = 2;
-  string  bandWechatyId = 3;
+  string  bindId = 3;
   BotTypeEnum botType = 4;
   string  chargeToken = 5;
   BotStatusEnum status = 6;

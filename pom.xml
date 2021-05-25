@@ -29,7 +29,7 @@
         <module>litemall-admin-api</module>
         <module>litemall-all</module>
         <module>litemall-all-war</module>
-        <module>litemall-grpc</module>
+        <module>litemall-promotion-grpc</module>
     </modules>
 
     <dependencyManagement>

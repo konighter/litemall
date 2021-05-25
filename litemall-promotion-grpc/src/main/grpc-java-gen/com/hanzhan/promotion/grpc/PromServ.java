@@ -315,149 +315,6 @@ public final class PromServ {
     // @@protoc_insertion_point(enum_scope:com.hanzhan.promotion.grpc.BotTypeEnum)
   }
 
-  /**
-   * Protobuf enum {@code com.hanzhan.promotion.grpc.BotOptEnum}
-   */
-  public enum BotOptEnum
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <pre>
-     * 未知
-     * </pre>
-     *
-     * <code>UNKOWNOPT = 0;</code>
-     */
-    UNKOWNOPT(0),
-    /**
-     * <code>QUERY = 1;</code>
-     */
-    QUERY(1),
-    /**
-     * <code>ONLINE = 2;</code>
-     */
-    ONLINE(2),
-    /**
-     * <code>OFFLINE = 3;</code>
-     */
-    OFFLINE(3),
-    /**
-     * <code>CREATE = 4;</code>
-     */
-    CREATE(4),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     * <pre>
-     * 未知
-     * </pre>
-     *
-     * <code>UNKOWNOPT = 0;</code>
-     */
-    public static final int UNKOWNOPT_VALUE = 0;
-    /**
-     * <code>QUERY = 1;</code>
-     */
-    public static final int QUERY_VALUE = 1;
-    /**
-     * <code>ONLINE = 2;</code>
-     */
-    public static final int ONLINE_VALUE = 2;
-    /**
-     * <code>OFFLINE = 3;</code>
-     */
-    public static final int OFFLINE_VALUE = 3;
-    /**
-     * <code>CREATE = 4;</code>
-     */
-    public static final int CREATE_VALUE = 4;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static BotOptEnum valueOf(int value) {
-      return forNumber(value);
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
-    public static BotOptEnum forNumber(int value) {
-      switch (value) {
-        case 0: return UNKOWNOPT;
-        case 1: return QUERY;
-        case 2: return ONLINE;
-        case 3: return OFFLINE;
-        case 4: return CREATE;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<BotOptEnum>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        BotOptEnum> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<BotOptEnum>() {
-            public BotOptEnum findValueByNumber(int number) {
-              return BotOptEnum.forNumber(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
-            "Can't get the descriptor of an unrecognized enum value.");
-      }
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.hanzhan.promotion.grpc.PromServ.getDescriptor().getEnumTypes().get(2);
-    }
-
-    private static final BotOptEnum[] VALUES = values();
-
-    public static BotOptEnum valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private BotOptEnum(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:com.hanzhan.promotion.grpc.BotOptEnum)
-  }
-
   public interface BotDetailOrBuilder extends
       // @@protoc_insertion_point(interface_extends:com.hanzhan.promotion.grpc.BotDetail)
       com.google.protobuf.MessageOrBuilder {
@@ -1753,8 +1610,8 @@ public final class PromServ {
 
   }
 
-  public interface BotOptRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.hanzhan.promotion.grpc.BotOptRequest)
+  public interface BotCreateRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.hanzhan.promotion.grpc.BotCreateRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -1790,28 +1647,6 @@ public final class PromServ {
         getBindIdBytes();
 
     /**
-     * <code>.com.hanzhan.promotion.grpc.BotOptEnum botOpt = 3;</code>
-     * @return The enum numeric value on the wire for botOpt.
-     */
-    int getBotOptValue();
-    /**
-     * <code>.com.hanzhan.promotion.grpc.BotOptEnum botOpt = 3;</code>
-     * @return The botOpt.
-     */
-    com.hanzhan.promotion.grpc.PromServ.BotOptEnum getBotOpt();
-
-    /**
-     * <code>.com.hanzhan.promotion.grpc.BotStatusEnum status = 4;</code>
-     * @return The enum numeric value on the wire for status.
-     */
-    int getStatusValue();
-    /**
-     * <code>.com.hanzhan.promotion.grpc.BotStatusEnum status = 4;</code>
-     * @return The status.
-     */
-    com.hanzhan.promotion.grpc.PromServ.BotStatusEnum getStatus();
-
-    /**
      * <code>.com.hanzhan.promotion.grpc.BotDetail bot = 5;</code>
      * @return Whether the bot field is set.
      */
@@ -1827,29 +1662,27 @@ public final class PromServ {
     com.hanzhan.promotion.grpc.PromServ.BotDetailOrBuilder getBotOrBuilder();
   }
   /**
-   * Protobuf type {@code com.hanzhan.promotion.grpc.BotOptRequest}
+   * Protobuf type {@code com.hanzhan.promotion.grpc.BotCreateRequest}
    */
-  public static final class BotOptRequest extends
+  public static final class BotCreateRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.hanzhan.promotion.grpc.BotOptRequest)
-      BotOptRequestOrBuilder {
+      // @@protoc_insertion_point(message_implements:com.hanzhan.promotion.grpc.BotCreateRequest)
+      BotCreateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use BotOptRequest.newBuilder() to construct.
-    private BotOptRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use BotCreateRequest.newBuilder() to construct.
+    private BotCreateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private BotOptRequest() {
+    private BotCreateRequest() {
       botToken_ = "";
       bindId_ = "";
-      botOpt_ = 0;
-      status_ = 0;
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new BotOptRequest();
+      return new BotCreateRequest();
     }
 
     @java.lang.Override
@@ -1857,7 +1690,7 @@ public final class PromServ {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private BotOptRequest(
+    private BotCreateRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1885,18 +1718,6 @@ public final class PromServ {
               java.lang.String s = input.readStringRequireUtf8();
 
               bindId_ = s;
-              break;
-            }
-            case 24: {
-              int rawValue = input.readEnum();
-
-              botOpt_ = rawValue;
-              break;
-            }
-            case 32: {
-              int rawValue = input.readEnum();
-
-              status_ = rawValue;
               break;
             }
             case 42: {
@@ -1933,15 +1754,15 @@ public final class PromServ {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.hanzhan.promotion.grpc.PromServ.internal_static_com_hanzhan_promotion_grpc_BotOptRequest_descriptor;
+      return com.hanzhan.promotion.grpc.PromServ.internal_static_com_hanzhan_promotion_grpc_BotCreateRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.hanzhan.promotion.grpc.PromServ.internal_static_com_hanzhan_promotion_grpc_BotOptRequest_fieldAccessorTable
+      return com.hanzhan.promotion.grpc.PromServ.internal_static_com_hanzhan_promotion_grpc_BotCreateRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.hanzhan.promotion.grpc.PromServ.BotOptRequest.class, com.hanzhan.promotion.grpc.PromServ.BotOptRequest.Builder.class);
+              com.hanzhan.promotion.grpc.PromServ.BotCreateRequest.class, com.hanzhan.promotion.grpc.PromServ.BotCreateRequest.Builder.class);
     }
 
     public static final int BOTTOKEN_FIELD_NUMBER = 1;
@@ -2028,44 +1849,6 @@ public final class PromServ {
       }
     }
 
-    public static final int BOTOPT_FIELD_NUMBER = 3;
-    private int botOpt_;
-    /**
-     * <code>.com.hanzhan.promotion.grpc.BotOptEnum botOpt = 3;</code>
-     * @return The enum numeric value on the wire for botOpt.
-     */
-    @java.lang.Override public int getBotOptValue() {
-      return botOpt_;
-    }
-    /**
-     * <code>.com.hanzhan.promotion.grpc.BotOptEnum botOpt = 3;</code>
-     * @return The botOpt.
-     */
-    @java.lang.Override public com.hanzhan.promotion.grpc.PromServ.BotOptEnum getBotOpt() {
-      @SuppressWarnings("deprecation")
-      com.hanzhan.promotion.grpc.PromServ.BotOptEnum result = com.hanzhan.promotion.grpc.PromServ.BotOptEnum.valueOf(botOpt_);
-      return result == null ? com.hanzhan.promotion.grpc.PromServ.BotOptEnum.UNRECOGNIZED : result;
-    }
-
-    public static final int STATUS_FIELD_NUMBER = 4;
-    private int status_;
-    /**
-     * <code>.com.hanzhan.promotion.grpc.BotStatusEnum status = 4;</code>
-     * @return The enum numeric value on the wire for status.
-     */
-    @java.lang.Override public int getStatusValue() {
-      return status_;
-    }
-    /**
-     * <code>.com.hanzhan.promotion.grpc.BotStatusEnum status = 4;</code>
-     * @return The status.
-     */
-    @java.lang.Override public com.hanzhan.promotion.grpc.PromServ.BotStatusEnum getStatus() {
-      @SuppressWarnings("deprecation")
-      com.hanzhan.promotion.grpc.PromServ.BotStatusEnum result = com.hanzhan.promotion.grpc.PromServ.BotStatusEnum.valueOf(status_);
-      return result == null ? com.hanzhan.promotion.grpc.PromServ.BotStatusEnum.UNRECOGNIZED : result;
-    }
-
     public static final int BOT_FIELD_NUMBER = 5;
     private com.hanzhan.promotion.grpc.PromServ.BotDetail bot_;
     /**
@@ -2112,12 +1895,6 @@ public final class PromServ {
       if (!getBindIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, bindId_);
       }
-      if (botOpt_ != com.hanzhan.promotion.grpc.PromServ.BotOptEnum.UNKOWNOPT.getNumber()) {
-        output.writeEnum(3, botOpt_);
-      }
-      if (status_ != com.hanzhan.promotion.grpc.PromServ.BotStatusEnum.UNKOWN.getNumber()) {
-        output.writeEnum(4, status_);
-      }
       if (bot_ != null) {
         output.writeMessage(5, getBot());
       }
@@ -2136,14 +1913,6 @@ public final class PromServ {
       if (!getBindIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, bindId_);
       }
-      if (botOpt_ != com.hanzhan.promotion.grpc.PromServ.BotOptEnum.UNKOWNOPT.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(3, botOpt_);
-      }
-      if (status_ != com.hanzhan.promotion.grpc.PromServ.BotStatusEnum.UNKOWN.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(4, status_);
-      }
       if (bot_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getBot());
@@ -2158,17 +1927,15 @@ public final class PromServ {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.hanzhan.promotion.grpc.PromServ.BotOptRequest)) {
+      if (!(obj instanceof com.hanzhan.promotion.grpc.PromServ.BotCreateRequest)) {
         return super.equals(obj);
       }
-      com.hanzhan.promotion.grpc.PromServ.BotOptRequest other = (com.hanzhan.promotion.grpc.PromServ.BotOptRequest) obj;
+      com.hanzhan.promotion.grpc.PromServ.BotCreateRequest other = (com.hanzhan.promotion.grpc.PromServ.BotCreateRequest) obj;
 
       if (!getBotToken()
           .equals(other.getBotToken())) return false;
       if (!getBindId()
           .equals(other.getBindId())) return false;
-      if (botOpt_ != other.botOpt_) return false;
-      if (status_ != other.status_) return false;
       if (hasBot() != other.hasBot()) return false;
       if (hasBot()) {
         if (!getBot()
@@ -2189,10 +1956,6 @@ public final class PromServ {
       hash = (53 * hash) + getBotToken().hashCode();
       hash = (37 * hash) + BINDID_FIELD_NUMBER;
       hash = (53 * hash) + getBindId().hashCode();
-      hash = (37 * hash) + BOTOPT_FIELD_NUMBER;
-      hash = (53 * hash) + botOpt_;
-      hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + status_;
       if (hasBot()) {
         hash = (37 * hash) + BOT_FIELD_NUMBER;
         hash = (53 * hash) + getBot().hashCode();
@@ -2202,69 +1965,69 @@ public final class PromServ {
       return hash;
     }
 
-    public static com.hanzhan.promotion.grpc.PromServ.BotOptRequest parseFrom(
+    public static com.hanzhan.promotion.grpc.PromServ.BotCreateRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.hanzhan.promotion.grpc.PromServ.BotOptRequest parseFrom(
+    public static com.hanzhan.promotion.grpc.PromServ.BotCreateRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.hanzhan.promotion.grpc.PromServ.BotOptRequest parseFrom(
+    public static com.hanzhan.promotion.grpc.PromServ.BotCreateRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.hanzhan.promotion.grpc.PromServ.BotOptRequest parseFrom(
+    public static com.hanzhan.promotion.grpc.PromServ.BotCreateRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.hanzhan.promotion.grpc.PromServ.BotOptRequest parseFrom(byte[] data)
+    public static com.hanzhan.promotion.grpc.PromServ.BotCreateRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.hanzhan.promotion.grpc.PromServ.BotOptRequest parseFrom(
+    public static com.hanzhan.promotion.grpc.PromServ.BotCreateRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.hanzhan.promotion.grpc.PromServ.BotOptRequest parseFrom(java.io.InputStream input)
+    public static com.hanzhan.promotion.grpc.PromServ.BotCreateRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.hanzhan.promotion.grpc.PromServ.BotOptRequest parseFrom(
+    public static com.hanzhan.promotion.grpc.PromServ.BotCreateRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.hanzhan.promotion.grpc.PromServ.BotOptRequest parseDelimitedFrom(java.io.InputStream input)
+    public static com.hanzhan.promotion.grpc.PromServ.BotCreateRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.hanzhan.promotion.grpc.PromServ.BotOptRequest parseDelimitedFrom(
+    public static com.hanzhan.promotion.grpc.PromServ.BotCreateRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.hanzhan.promotion.grpc.PromServ.BotOptRequest parseFrom(
+    public static com.hanzhan.promotion.grpc.PromServ.BotCreateRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.hanzhan.promotion.grpc.PromServ.BotOptRequest parseFrom(
+    public static com.hanzhan.promotion.grpc.PromServ.BotCreateRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2277,7 +2040,7 @@ public final class PromServ {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.hanzhan.promotion.grpc.PromServ.BotOptRequest prototype) {
+    public static Builder newBuilder(com.hanzhan.promotion.grpc.PromServ.BotCreateRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -2293,26 +2056,26 @@ public final class PromServ {
       return builder;
     }
     /**
-     * Protobuf type {@code com.hanzhan.promotion.grpc.BotOptRequest}
+     * Protobuf type {@code com.hanzhan.promotion.grpc.BotCreateRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.hanzhan.promotion.grpc.BotOptRequest)
-        com.hanzhan.promotion.grpc.PromServ.BotOptRequestOrBuilder {
+        // @@protoc_insertion_point(builder_implements:com.hanzhan.promotion.grpc.BotCreateRequest)
+        com.hanzhan.promotion.grpc.PromServ.BotCreateRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.hanzhan.promotion.grpc.PromServ.internal_static_com_hanzhan_promotion_grpc_BotOptRequest_descriptor;
+        return com.hanzhan.promotion.grpc.PromServ.internal_static_com_hanzhan_promotion_grpc_BotCreateRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.hanzhan.promotion.grpc.PromServ.internal_static_com_hanzhan_promotion_grpc_BotOptRequest_fieldAccessorTable
+        return com.hanzhan.promotion.grpc.PromServ.internal_static_com_hanzhan_promotion_grpc_BotCreateRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.hanzhan.promotion.grpc.PromServ.BotOptRequest.class, com.hanzhan.promotion.grpc.PromServ.BotOptRequest.Builder.class);
+                com.hanzhan.promotion.grpc.PromServ.BotCreateRequest.class, com.hanzhan.promotion.grpc.PromServ.BotCreateRequest.Builder.class);
       }
 
-      // Construct using com.hanzhan.promotion.grpc.PromServ.BotOptRequest.newBuilder()
+      // Construct using com.hanzhan.promotion.grpc.PromServ.BotCreateRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -2334,10 +2097,6 @@ public final class PromServ {
 
         bindId_ = "";
 
-        botOpt_ = 0;
-
-        status_ = 0;
-
         if (botBuilder_ == null) {
           bot_ = null;
         } else {
@@ -2350,17 +2109,17 @@ public final class PromServ {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.hanzhan.promotion.grpc.PromServ.internal_static_com_hanzhan_promotion_grpc_BotOptRequest_descriptor;
+        return com.hanzhan.promotion.grpc.PromServ.internal_static_com_hanzhan_promotion_grpc_BotCreateRequest_descriptor;
       }
 
       @java.lang.Override
-      public com.hanzhan.promotion.grpc.PromServ.BotOptRequest getDefaultInstanceForType() {
-        return com.hanzhan.promotion.grpc.PromServ.BotOptRequest.getDefaultInstance();
+      public com.hanzhan.promotion.grpc.PromServ.BotCreateRequest getDefaultInstanceForType() {
+        return com.hanzhan.promotion.grpc.PromServ.BotCreateRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.hanzhan.promotion.grpc.PromServ.BotOptRequest build() {
-        com.hanzhan.promotion.grpc.PromServ.BotOptRequest result = buildPartial();
+      public com.hanzhan.promotion.grpc.PromServ.BotCreateRequest build() {
+        com.hanzhan.promotion.grpc.PromServ.BotCreateRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -2368,12 +2127,10 @@ public final class PromServ {
       }
 
       @java.lang.Override
-      public com.hanzhan.promotion.grpc.PromServ.BotOptRequest buildPartial() {
-        com.hanzhan.promotion.grpc.PromServ.BotOptRequest result = new com.hanzhan.promotion.grpc.PromServ.BotOptRequest(this);
+      public com.hanzhan.promotion.grpc.PromServ.BotCreateRequest buildPartial() {
+        com.hanzhan.promotion.grpc.PromServ.BotCreateRequest result = new com.hanzhan.promotion.grpc.PromServ.BotCreateRequest(this);
         result.botToken_ = botToken_;
         result.bindId_ = bindId_;
-        result.botOpt_ = botOpt_;
-        result.status_ = status_;
         if (botBuilder_ == null) {
           result.bot_ = bot_;
         } else {
@@ -2417,16 +2174,16 @@ public final class PromServ {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.hanzhan.promotion.grpc.PromServ.BotOptRequest) {
-          return mergeFrom((com.hanzhan.promotion.grpc.PromServ.BotOptRequest)other);
+        if (other instanceof com.hanzhan.promotion.grpc.PromServ.BotCreateRequest) {
+          return mergeFrom((com.hanzhan.promotion.grpc.PromServ.BotCreateRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.hanzhan.promotion.grpc.PromServ.BotOptRequest other) {
-        if (other == com.hanzhan.promotion.grpc.PromServ.BotOptRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.hanzhan.promotion.grpc.PromServ.BotCreateRequest other) {
+        if (other == com.hanzhan.promotion.grpc.PromServ.BotCreateRequest.getDefaultInstance()) return this;
         if (!other.getBotToken().isEmpty()) {
           botToken_ = other.botToken_;
           onChanged();
@@ -2434,12 +2191,6 @@ public final class PromServ {
         if (!other.getBindId().isEmpty()) {
           bindId_ = other.bindId_;
           onChanged();
-        }
-        if (other.botOpt_ != 0) {
-          setBotOptValue(other.getBotOptValue());
-        }
-        if (other.status_ != 0) {
-          setStatusValue(other.getStatusValue());
         }
         if (other.hasBot()) {
           mergeBot(other.getBot());
@@ -2459,11 +2210,11 @@ public final class PromServ {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.hanzhan.promotion.grpc.PromServ.BotOptRequest parsedMessage = null;
+        com.hanzhan.promotion.grpc.PromServ.BotCreateRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.hanzhan.promotion.grpc.PromServ.BotOptRequest) e.getUnfinishedMessage();
+          parsedMessage = (com.hanzhan.promotion.grpc.PromServ.BotCreateRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2645,114 +2396,6 @@ public final class PromServ {
         return this;
       }
 
-      private int botOpt_ = 0;
-      /**
-       * <code>.com.hanzhan.promotion.grpc.BotOptEnum botOpt = 3;</code>
-       * @return The enum numeric value on the wire for botOpt.
-       */
-      @java.lang.Override public int getBotOptValue() {
-        return botOpt_;
-      }
-      /**
-       * <code>.com.hanzhan.promotion.grpc.BotOptEnum botOpt = 3;</code>
-       * @param value The enum numeric value on the wire for botOpt to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBotOptValue(int value) {
-        
-        botOpt_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.com.hanzhan.promotion.grpc.BotOptEnum botOpt = 3;</code>
-       * @return The botOpt.
-       */
-      @java.lang.Override
-      public com.hanzhan.promotion.grpc.PromServ.BotOptEnum getBotOpt() {
-        @SuppressWarnings("deprecation")
-        com.hanzhan.promotion.grpc.PromServ.BotOptEnum result = com.hanzhan.promotion.grpc.PromServ.BotOptEnum.valueOf(botOpt_);
-        return result == null ? com.hanzhan.promotion.grpc.PromServ.BotOptEnum.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.com.hanzhan.promotion.grpc.BotOptEnum botOpt = 3;</code>
-       * @param value The botOpt to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBotOpt(com.hanzhan.promotion.grpc.PromServ.BotOptEnum value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        botOpt_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.com.hanzhan.promotion.grpc.BotOptEnum botOpt = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBotOpt() {
-        
-        botOpt_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int status_ = 0;
-      /**
-       * <code>.com.hanzhan.promotion.grpc.BotStatusEnum status = 4;</code>
-       * @return The enum numeric value on the wire for status.
-       */
-      @java.lang.Override public int getStatusValue() {
-        return status_;
-      }
-      /**
-       * <code>.com.hanzhan.promotion.grpc.BotStatusEnum status = 4;</code>
-       * @param value The enum numeric value on the wire for status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatusValue(int value) {
-        
-        status_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.com.hanzhan.promotion.grpc.BotStatusEnum status = 4;</code>
-       * @return The status.
-       */
-      @java.lang.Override
-      public com.hanzhan.promotion.grpc.PromServ.BotStatusEnum getStatus() {
-        @SuppressWarnings("deprecation")
-        com.hanzhan.promotion.grpc.PromServ.BotStatusEnum result = com.hanzhan.promotion.grpc.PromServ.BotStatusEnum.valueOf(status_);
-        return result == null ? com.hanzhan.promotion.grpc.PromServ.BotStatusEnum.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.com.hanzhan.promotion.grpc.BotStatusEnum status = 4;</code>
-       * @param value The status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatus(com.hanzhan.promotion.grpc.PromServ.BotStatusEnum value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        status_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.com.hanzhan.promotion.grpc.BotStatusEnum status = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStatus() {
-        
-        status_ = 0;
-        onChanged();
-        return this;
-      }
-
       private com.hanzhan.promotion.grpc.PromServ.BotDetail bot_;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.hanzhan.promotion.grpc.PromServ.BotDetail, com.hanzhan.promotion.grpc.PromServ.BotDetail.Builder, com.hanzhan.promotion.grpc.PromServ.BotDetailOrBuilder> botBuilder_;
@@ -2884,48 +2527,48 @@ public final class PromServ {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:com.hanzhan.promotion.grpc.BotOptRequest)
+      // @@protoc_insertion_point(builder_scope:com.hanzhan.promotion.grpc.BotCreateRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:com.hanzhan.promotion.grpc.BotOptRequest)
-    private static final com.hanzhan.promotion.grpc.PromServ.BotOptRequest DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:com.hanzhan.promotion.grpc.BotCreateRequest)
+    private static final com.hanzhan.promotion.grpc.PromServ.BotCreateRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.hanzhan.promotion.grpc.PromServ.BotOptRequest();
+      DEFAULT_INSTANCE = new com.hanzhan.promotion.grpc.PromServ.BotCreateRequest();
     }
 
-    public static com.hanzhan.promotion.grpc.PromServ.BotOptRequest getDefaultInstance() {
+    public static com.hanzhan.promotion.grpc.PromServ.BotCreateRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<BotOptRequest>
-        PARSER = new com.google.protobuf.AbstractParser<BotOptRequest>() {
+    private static final com.google.protobuf.Parser<BotCreateRequest>
+        PARSER = new com.google.protobuf.AbstractParser<BotCreateRequest>() {
       @java.lang.Override
-      public BotOptRequest parsePartialFrom(
+      public BotCreateRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new BotOptRequest(input, extensionRegistry);
+        return new BotCreateRequest(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<BotOptRequest> parser() {
+    public static com.google.protobuf.Parser<BotCreateRequest> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<BotOptRequest> getParserForType() {
+    public com.google.protobuf.Parser<BotCreateRequest> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.hanzhan.promotion.grpc.PromServ.BotOptRequest getDefaultInstanceForType() {
+    public com.hanzhan.promotion.grpc.PromServ.BotCreateRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface BotOptResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.hanzhan.promotion.grpc.BotOptResponse)
+  public interface BotCreateResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.hanzhan.promotion.grpc.BotCreateResponse)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -2935,63 +2578,53 @@ public final class PromServ {
     int getCode();
 
     /**
-     * <code>string errorMessage = 2;</code>
-     * @return The errorMessage.
+     * <code>string msg = 2;</code>
+     * @return The msg.
      */
-    java.lang.String getErrorMessage();
+    java.lang.String getMsg();
     /**
-     * <code>string errorMessage = 2;</code>
-     * @return The bytes for errorMessage.
+     * <code>string msg = 2;</code>
+     * @return The bytes for msg.
      */
     com.google.protobuf.ByteString
-        getErrorMessageBytes();
+        getMsgBytes();
 
     /**
-     * <code>repeated .com.hanzhan.promotion.grpc.BotDetail bots = 4;</code>
+     * <code>.com.hanzhan.promotion.grpc.BotDetail bots = 3;</code>
+     * @return Whether the bots field is set.
      */
-    java.util.List<com.hanzhan.promotion.grpc.PromServ.BotDetail> 
-        getBotsList();
+    boolean hasBots();
     /**
-     * <code>repeated .com.hanzhan.promotion.grpc.BotDetail bots = 4;</code>
+     * <code>.com.hanzhan.promotion.grpc.BotDetail bots = 3;</code>
+     * @return The bots.
      */
-    com.hanzhan.promotion.grpc.PromServ.BotDetail getBots(int index);
+    com.hanzhan.promotion.grpc.PromServ.BotDetail getBots();
     /**
-     * <code>repeated .com.hanzhan.promotion.grpc.BotDetail bots = 4;</code>
+     * <code>.com.hanzhan.promotion.grpc.BotDetail bots = 3;</code>
      */
-    int getBotsCount();
-    /**
-     * <code>repeated .com.hanzhan.promotion.grpc.BotDetail bots = 4;</code>
-     */
-    java.util.List<? extends com.hanzhan.promotion.grpc.PromServ.BotDetailOrBuilder> 
-        getBotsOrBuilderList();
-    /**
-     * <code>repeated .com.hanzhan.promotion.grpc.BotDetail bots = 4;</code>
-     */
-    com.hanzhan.promotion.grpc.PromServ.BotDetailOrBuilder getBotsOrBuilder(
-        int index);
+    com.hanzhan.promotion.grpc.PromServ.BotDetailOrBuilder getBotsOrBuilder();
   }
   /**
-   * Protobuf type {@code com.hanzhan.promotion.grpc.BotOptResponse}
+   * Protobuf type {@code com.hanzhan.promotion.grpc.BotCreateResponse}
    */
-  public static final class BotOptResponse extends
+  public static final class BotCreateResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.hanzhan.promotion.grpc.BotOptResponse)
-      BotOptResponseOrBuilder {
+      // @@protoc_insertion_point(message_implements:com.hanzhan.promotion.grpc.BotCreateResponse)
+      BotCreateResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use BotOptResponse.newBuilder() to construct.
-    private BotOptResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use BotCreateResponse.newBuilder() to construct.
+    private BotCreateResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private BotOptResponse() {
-      errorMessage_ = "";
-      bots_ = java.util.Collections.emptyList();
+    private BotCreateResponse() {
+      msg_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new BotOptResponse();
+      return new BotCreateResponse();
     }
 
     @java.lang.Override
@@ -2999,7 +2632,7 @@ public final class PromServ {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private BotOptResponse(
+    private BotCreateResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3007,7 +2640,6 @@ public final class PromServ {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -3026,16 +2658,20 @@ public final class PromServ {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              errorMessage_ = s;
+              msg_ = s;
               break;
             }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                bots_ = new java.util.ArrayList<com.hanzhan.promotion.grpc.PromServ.BotDetail>();
-                mutable_bitField0_ |= 0x00000001;
+            case 26: {
+              com.hanzhan.promotion.grpc.PromServ.BotDetail.Builder subBuilder = null;
+              if (bots_ != null) {
+                subBuilder = bots_.toBuilder();
               }
-              bots_.add(
-                  input.readMessage(com.hanzhan.promotion.grpc.PromServ.BotDetail.parser(), extensionRegistry));
+              bots_ = input.readMessage(com.hanzhan.promotion.grpc.PromServ.BotDetail.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(bots_);
+                bots_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -3053,24 +2689,21 @@ public final class PromServ {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          bots_ = java.util.Collections.unmodifiableList(bots_);
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.hanzhan.promotion.grpc.PromServ.internal_static_com_hanzhan_promotion_grpc_BotOptResponse_descriptor;
+      return com.hanzhan.promotion.grpc.PromServ.internal_static_com_hanzhan_promotion_grpc_BotCreateResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.hanzhan.promotion.grpc.PromServ.internal_static_com_hanzhan_promotion_grpc_BotOptResponse_fieldAccessorTable
+      return com.hanzhan.promotion.grpc.PromServ.internal_static_com_hanzhan_promotion_grpc_BotCreateResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.hanzhan.promotion.grpc.PromServ.BotOptResponse.class, com.hanzhan.promotion.grpc.PromServ.BotOptResponse.Builder.class);
+              com.hanzhan.promotion.grpc.PromServ.BotCreateResponse.class, com.hanzhan.promotion.grpc.PromServ.BotCreateResponse.Builder.class);
     }
 
     public static final int CODE_FIELD_NUMBER = 1;
@@ -3084,82 +2717,68 @@ public final class PromServ {
       return code_;
     }
 
-    public static final int ERRORMESSAGE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object errorMessage_;
+    public static final int MSG_FIELD_NUMBER = 2;
+    private volatile java.lang.Object msg_;
     /**
-     * <code>string errorMessage = 2;</code>
-     * @return The errorMessage.
+     * <code>string msg = 2;</code>
+     * @return The msg.
      */
     @java.lang.Override
-    public java.lang.String getErrorMessage() {
-      java.lang.Object ref = errorMessage_;
+    public java.lang.String getMsg() {
+      java.lang.Object ref = msg_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        errorMessage_ = s;
+        msg_ = s;
         return s;
       }
     }
     /**
-     * <code>string errorMessage = 2;</code>
-     * @return The bytes for errorMessage.
+     * <code>string msg = 2;</code>
+     * @return The bytes for msg.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getErrorMessageBytes() {
-      java.lang.Object ref = errorMessage_;
+        getMsgBytes() {
+      java.lang.Object ref = msg_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        errorMessage_ = b;
+        msg_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int BOTS_FIELD_NUMBER = 4;
-    private java.util.List<com.hanzhan.promotion.grpc.PromServ.BotDetail> bots_;
+    public static final int BOTS_FIELD_NUMBER = 3;
+    private com.hanzhan.promotion.grpc.PromServ.BotDetail bots_;
     /**
-     * <code>repeated .com.hanzhan.promotion.grpc.BotDetail bots = 4;</code>
+     * <code>.com.hanzhan.promotion.grpc.BotDetail bots = 3;</code>
+     * @return Whether the bots field is set.
      */
     @java.lang.Override
-    public java.util.List<com.hanzhan.promotion.grpc.PromServ.BotDetail> getBotsList() {
-      return bots_;
+    public boolean hasBots() {
+      return bots_ != null;
     }
     /**
-     * <code>repeated .com.hanzhan.promotion.grpc.BotDetail bots = 4;</code>
+     * <code>.com.hanzhan.promotion.grpc.BotDetail bots = 3;</code>
+     * @return The bots.
      */
     @java.lang.Override
-    public java.util.List<? extends com.hanzhan.promotion.grpc.PromServ.BotDetailOrBuilder> 
-        getBotsOrBuilderList() {
-      return bots_;
+    public com.hanzhan.promotion.grpc.PromServ.BotDetail getBots() {
+      return bots_ == null ? com.hanzhan.promotion.grpc.PromServ.BotDetail.getDefaultInstance() : bots_;
     }
     /**
-     * <code>repeated .com.hanzhan.promotion.grpc.BotDetail bots = 4;</code>
+     * <code>.com.hanzhan.promotion.grpc.BotDetail bots = 3;</code>
      */
     @java.lang.Override
-    public int getBotsCount() {
-      return bots_.size();
-    }
-    /**
-     * <code>repeated .com.hanzhan.promotion.grpc.BotDetail bots = 4;</code>
-     */
-    @java.lang.Override
-    public com.hanzhan.promotion.grpc.PromServ.BotDetail getBots(int index) {
-      return bots_.get(index);
-    }
-    /**
-     * <code>repeated .com.hanzhan.promotion.grpc.BotDetail bots = 4;</code>
-     */
-    @java.lang.Override
-    public com.hanzhan.promotion.grpc.PromServ.BotDetailOrBuilder getBotsOrBuilder(
-        int index) {
-      return bots_.get(index);
+    public com.hanzhan.promotion.grpc.PromServ.BotDetailOrBuilder getBotsOrBuilder() {
+      return getBots();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3179,11 +2798,11 @@ public final class PromServ {
       if (code_ != 0) {
         output.writeInt32(1, code_);
       }
-      if (!getErrorMessageBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, errorMessage_);
+      if (!getMsgBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, msg_);
       }
-      for (int i = 0; i < bots_.size(); i++) {
-        output.writeMessage(4, bots_.get(i));
+      if (bots_ != null) {
+        output.writeMessage(3, getBots());
       }
       unknownFields.writeTo(output);
     }
@@ -3198,12 +2817,12 @@ public final class PromServ {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(1, code_);
       }
-      if (!getErrorMessageBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, errorMessage_);
+      if (!getMsgBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, msg_);
       }
-      for (int i = 0; i < bots_.size(); i++) {
+      if (bots_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, bots_.get(i));
+          .computeMessageSize(3, getBots());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3215,17 +2834,20 @@ public final class PromServ {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.hanzhan.promotion.grpc.PromServ.BotOptResponse)) {
+      if (!(obj instanceof com.hanzhan.promotion.grpc.PromServ.BotCreateResponse)) {
         return super.equals(obj);
       }
-      com.hanzhan.promotion.grpc.PromServ.BotOptResponse other = (com.hanzhan.promotion.grpc.PromServ.BotOptResponse) obj;
+      com.hanzhan.promotion.grpc.PromServ.BotCreateResponse other = (com.hanzhan.promotion.grpc.PromServ.BotCreateResponse) obj;
 
       if (getCode()
           != other.getCode()) return false;
-      if (!getErrorMessage()
-          .equals(other.getErrorMessage())) return false;
-      if (!getBotsList()
-          .equals(other.getBotsList())) return false;
+      if (!getMsg()
+          .equals(other.getMsg())) return false;
+      if (hasBots() != other.hasBots()) return false;
+      if (hasBots()) {
+        if (!getBots()
+            .equals(other.getBots())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3239,80 +2861,80 @@ public final class PromServ {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + CODE_FIELD_NUMBER;
       hash = (53 * hash) + getCode();
-      hash = (37 * hash) + ERRORMESSAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getErrorMessage().hashCode();
-      if (getBotsCount() > 0) {
+      hash = (37 * hash) + MSG_FIELD_NUMBER;
+      hash = (53 * hash) + getMsg().hashCode();
+      if (hasBots()) {
         hash = (37 * hash) + BOTS_FIELD_NUMBER;
-        hash = (53 * hash) + getBotsList().hashCode();
+        hash = (53 * hash) + getBots().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.hanzhan.promotion.grpc.PromServ.BotOptResponse parseFrom(
+    public static com.hanzhan.promotion.grpc.PromServ.BotCreateResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.hanzhan.promotion.grpc.PromServ.BotOptResponse parseFrom(
+    public static com.hanzhan.promotion.grpc.PromServ.BotCreateResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.hanzhan.promotion.grpc.PromServ.BotOptResponse parseFrom(
+    public static com.hanzhan.promotion.grpc.PromServ.BotCreateResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.hanzhan.promotion.grpc.PromServ.BotOptResponse parseFrom(
+    public static com.hanzhan.promotion.grpc.PromServ.BotCreateResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.hanzhan.promotion.grpc.PromServ.BotOptResponse parseFrom(byte[] data)
+    public static com.hanzhan.promotion.grpc.PromServ.BotCreateResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.hanzhan.promotion.grpc.PromServ.BotOptResponse parseFrom(
+    public static com.hanzhan.promotion.grpc.PromServ.BotCreateResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.hanzhan.promotion.grpc.PromServ.BotOptResponse parseFrom(java.io.InputStream input)
+    public static com.hanzhan.promotion.grpc.PromServ.BotCreateResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.hanzhan.promotion.grpc.PromServ.BotOptResponse parseFrom(
+    public static com.hanzhan.promotion.grpc.PromServ.BotCreateResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.hanzhan.promotion.grpc.PromServ.BotOptResponse parseDelimitedFrom(java.io.InputStream input)
+    public static com.hanzhan.promotion.grpc.PromServ.BotCreateResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.hanzhan.promotion.grpc.PromServ.BotOptResponse parseDelimitedFrom(
+    public static com.hanzhan.promotion.grpc.PromServ.BotCreateResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.hanzhan.promotion.grpc.PromServ.BotOptResponse parseFrom(
+    public static com.hanzhan.promotion.grpc.PromServ.BotCreateResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.hanzhan.promotion.grpc.PromServ.BotOptResponse parseFrom(
+    public static com.hanzhan.promotion.grpc.PromServ.BotCreateResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3325,7 +2947,7 @@ public final class PromServ {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.hanzhan.promotion.grpc.PromServ.BotOptResponse prototype) {
+    public static Builder newBuilder(com.hanzhan.promotion.grpc.PromServ.BotCreateResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -3341,26 +2963,26 @@ public final class PromServ {
       return builder;
     }
     /**
-     * Protobuf type {@code com.hanzhan.promotion.grpc.BotOptResponse}
+     * Protobuf type {@code com.hanzhan.promotion.grpc.BotCreateResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.hanzhan.promotion.grpc.BotOptResponse)
-        com.hanzhan.promotion.grpc.PromServ.BotOptResponseOrBuilder {
+        // @@protoc_insertion_point(builder_implements:com.hanzhan.promotion.grpc.BotCreateResponse)
+        com.hanzhan.promotion.grpc.PromServ.BotCreateResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.hanzhan.promotion.grpc.PromServ.internal_static_com_hanzhan_promotion_grpc_BotOptResponse_descriptor;
+        return com.hanzhan.promotion.grpc.PromServ.internal_static_com_hanzhan_promotion_grpc_BotCreateResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.hanzhan.promotion.grpc.PromServ.internal_static_com_hanzhan_promotion_grpc_BotOptResponse_fieldAccessorTable
+        return com.hanzhan.promotion.grpc.PromServ.internal_static_com_hanzhan_promotion_grpc_BotCreateResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.hanzhan.promotion.grpc.PromServ.BotOptResponse.class, com.hanzhan.promotion.grpc.PromServ.BotOptResponse.Builder.class);
+                com.hanzhan.promotion.grpc.PromServ.BotCreateResponse.class, com.hanzhan.promotion.grpc.PromServ.BotCreateResponse.Builder.class);
       }
 
-      // Construct using com.hanzhan.promotion.grpc.PromServ.BotOptResponse.newBuilder()
+      // Construct using com.hanzhan.promotion.grpc.PromServ.BotCreateResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -3373,7 +2995,6 @@ public final class PromServ {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getBotsFieldBuilder();
         }
       }
       @java.lang.Override
@@ -3381,13 +3002,13 @@ public final class PromServ {
         super.clear();
         code_ = 0;
 
-        errorMessage_ = "";
+        msg_ = "";
 
         if (botsBuilder_ == null) {
-          bots_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bots_ = null;
         } else {
-          botsBuilder_.clear();
+          bots_ = null;
+          botsBuilder_ = null;
         }
         return this;
       }
@@ -3395,17 +3016,17 @@ public final class PromServ {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.hanzhan.promotion.grpc.PromServ.internal_static_com_hanzhan_promotion_grpc_BotOptResponse_descriptor;
+        return com.hanzhan.promotion.grpc.PromServ.internal_static_com_hanzhan_promotion_grpc_BotCreateResponse_descriptor;
       }
 
       @java.lang.Override
-      public com.hanzhan.promotion.grpc.PromServ.BotOptResponse getDefaultInstanceForType() {
-        return com.hanzhan.promotion.grpc.PromServ.BotOptResponse.getDefaultInstance();
+      public com.hanzhan.promotion.grpc.PromServ.BotCreateResponse getDefaultInstanceForType() {
+        return com.hanzhan.promotion.grpc.PromServ.BotCreateResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.hanzhan.promotion.grpc.PromServ.BotOptResponse build() {
-        com.hanzhan.promotion.grpc.PromServ.BotOptResponse result = buildPartial();
+      public com.hanzhan.promotion.grpc.PromServ.BotCreateResponse build() {
+        com.hanzhan.promotion.grpc.PromServ.BotCreateResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -3413,16 +3034,11 @@ public final class PromServ {
       }
 
       @java.lang.Override
-      public com.hanzhan.promotion.grpc.PromServ.BotOptResponse buildPartial() {
-        com.hanzhan.promotion.grpc.PromServ.BotOptResponse result = new com.hanzhan.promotion.grpc.PromServ.BotOptResponse(this);
-        int from_bitField0_ = bitField0_;
+      public com.hanzhan.promotion.grpc.PromServ.BotCreateResponse buildPartial() {
+        com.hanzhan.promotion.grpc.PromServ.BotCreateResponse result = new com.hanzhan.promotion.grpc.PromServ.BotCreateResponse(this);
         result.code_ = code_;
-        result.errorMessage_ = errorMessage_;
+        result.msg_ = msg_;
         if (botsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            bots_ = java.util.Collections.unmodifiableList(bots_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
           result.bots_ = bots_;
         } else {
           result.bots_ = botsBuilder_.build();
@@ -3465,48 +3081,25 @@ public final class PromServ {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.hanzhan.promotion.grpc.PromServ.BotOptResponse) {
-          return mergeFrom((com.hanzhan.promotion.grpc.PromServ.BotOptResponse)other);
+        if (other instanceof com.hanzhan.promotion.grpc.PromServ.BotCreateResponse) {
+          return mergeFrom((com.hanzhan.promotion.grpc.PromServ.BotCreateResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.hanzhan.promotion.grpc.PromServ.BotOptResponse other) {
-        if (other == com.hanzhan.promotion.grpc.PromServ.BotOptResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.hanzhan.promotion.grpc.PromServ.BotCreateResponse other) {
+        if (other == com.hanzhan.promotion.grpc.PromServ.BotCreateResponse.getDefaultInstance()) return this;
         if (other.getCode() != 0) {
           setCode(other.getCode());
         }
-        if (!other.getErrorMessage().isEmpty()) {
-          errorMessage_ = other.errorMessage_;
+        if (!other.getMsg().isEmpty()) {
+          msg_ = other.msg_;
           onChanged();
         }
-        if (botsBuilder_ == null) {
-          if (!other.bots_.isEmpty()) {
-            if (bots_.isEmpty()) {
-              bots_ = other.bots_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureBotsIsMutable();
-              bots_.addAll(other.bots_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.bots_.isEmpty()) {
-            if (botsBuilder_.isEmpty()) {
-              botsBuilder_.dispose();
-              botsBuilder_ = null;
-              bots_ = other.bots_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              botsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getBotsFieldBuilder() : null;
-            } else {
-              botsBuilder_.addAllMessages(other.bots_);
-            }
-          }
+        if (other.hasBots()) {
+          mergeBots(other.getBots());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3523,11 +3116,11 @@ public final class PromServ {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.hanzhan.promotion.grpc.PromServ.BotOptResponse parsedMessage = null;
+        com.hanzhan.promotion.grpc.PromServ.BotCreateResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.hanzhan.promotion.grpc.PromServ.BotOptResponse) e.getUnfinishedMessage();
+          parsedMessage = (com.hanzhan.promotion.grpc.PromServ.BotCreateResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3536,7 +3129,6 @@ public final class PromServ {
         }
         return this;
       }
-      private int bitField0_;
 
       private int code_ ;
       /**
@@ -3569,315 +3161,194 @@ public final class PromServ {
         return this;
       }
 
-      private java.lang.Object errorMessage_ = "";
+      private java.lang.Object msg_ = "";
       /**
-       * <code>string errorMessage = 2;</code>
-       * @return The errorMessage.
+       * <code>string msg = 2;</code>
+       * @return The msg.
        */
-      public java.lang.String getErrorMessage() {
-        java.lang.Object ref = errorMessage_;
+      public java.lang.String getMsg() {
+        java.lang.Object ref = msg_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          errorMessage_ = s;
+          msg_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string errorMessage = 2;</code>
-       * @return The bytes for errorMessage.
+       * <code>string msg = 2;</code>
+       * @return The bytes for msg.
        */
       public com.google.protobuf.ByteString
-          getErrorMessageBytes() {
-        java.lang.Object ref = errorMessage_;
+          getMsgBytes() {
+        java.lang.Object ref = msg_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          errorMessage_ = b;
+          msg_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string errorMessage = 2;</code>
-       * @param value The errorMessage to set.
+       * <code>string msg = 2;</code>
+       * @param value The msg to set.
        * @return This builder for chaining.
        */
-      public Builder setErrorMessage(
+      public Builder setMsg(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        errorMessage_ = value;
+        msg_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string errorMessage = 2;</code>
+       * <code>string msg = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearErrorMessage() {
+      public Builder clearMsg() {
         
-        errorMessage_ = getDefaultInstance().getErrorMessage();
+        msg_ = getDefaultInstance().getMsg();
         onChanged();
         return this;
       }
       /**
-       * <code>string errorMessage = 2;</code>
-       * @param value The bytes for errorMessage to set.
+       * <code>string msg = 2;</code>
+       * @param value The bytes for msg to set.
        * @return This builder for chaining.
        */
-      public Builder setErrorMessageBytes(
+      public Builder setMsgBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        errorMessage_ = value;
+        msg_ = value;
         onChanged();
         return this;
       }
 
-      private java.util.List<com.hanzhan.promotion.grpc.PromServ.BotDetail> bots_ =
-        java.util.Collections.emptyList();
-      private void ensureBotsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          bots_ = new java.util.ArrayList<com.hanzhan.promotion.grpc.PromServ.BotDetail>(bots_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
+      private com.hanzhan.promotion.grpc.PromServ.BotDetail bots_;
+      private com.google.protobuf.SingleFieldBuilderV3<
           com.hanzhan.promotion.grpc.PromServ.BotDetail, com.hanzhan.promotion.grpc.PromServ.BotDetail.Builder, com.hanzhan.promotion.grpc.PromServ.BotDetailOrBuilder> botsBuilder_;
+      /**
+       * <code>.com.hanzhan.promotion.grpc.BotDetail bots = 3;</code>
+       * @return Whether the bots field is set.
+       */
+      public boolean hasBots() {
+        return botsBuilder_ != null || bots_ != null;
+      }
+      /**
+       * <code>.com.hanzhan.promotion.grpc.BotDetail bots = 3;</code>
+       * @return The bots.
+       */
+      public com.hanzhan.promotion.grpc.PromServ.BotDetail getBots() {
+        if (botsBuilder_ == null) {
+          return bots_ == null ? com.hanzhan.promotion.grpc.PromServ.BotDetail.getDefaultInstance() : bots_;
+        } else {
+          return botsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.com.hanzhan.promotion.grpc.BotDetail bots = 3;</code>
+       */
+      public Builder setBots(com.hanzhan.promotion.grpc.PromServ.BotDetail value) {
+        if (botsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bots_ = value;
+          onChanged();
+        } else {
+          botsBuilder_.setMessage(value);
+        }
 
-      /**
-       * <code>repeated .com.hanzhan.promotion.grpc.BotDetail bots = 4;</code>
-       */
-      public java.util.List<com.hanzhan.promotion.grpc.PromServ.BotDetail> getBotsList() {
-        if (botsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(bots_);
-        } else {
-          return botsBuilder_.getMessageList();
-        }
+        return this;
       }
       /**
-       * <code>repeated .com.hanzhan.promotion.grpc.BotDetail bots = 4;</code>
-       */
-      public int getBotsCount() {
-        if (botsBuilder_ == null) {
-          return bots_.size();
-        } else {
-          return botsBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .com.hanzhan.promotion.grpc.BotDetail bots = 4;</code>
-       */
-      public com.hanzhan.promotion.grpc.PromServ.BotDetail getBots(int index) {
-        if (botsBuilder_ == null) {
-          return bots_.get(index);
-        } else {
-          return botsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .com.hanzhan.promotion.grpc.BotDetail bots = 4;</code>
+       * <code>.com.hanzhan.promotion.grpc.BotDetail bots = 3;</code>
        */
       public Builder setBots(
-          int index, com.hanzhan.promotion.grpc.PromServ.BotDetail value) {
-        if (botsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureBotsIsMutable();
-          bots_.set(index, value);
-          onChanged();
-        } else {
-          botsBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.hanzhan.promotion.grpc.BotDetail bots = 4;</code>
-       */
-      public Builder setBots(
-          int index, com.hanzhan.promotion.grpc.PromServ.BotDetail.Builder builderForValue) {
-        if (botsBuilder_ == null) {
-          ensureBotsIsMutable();
-          bots_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          botsBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.hanzhan.promotion.grpc.BotDetail bots = 4;</code>
-       */
-      public Builder addBots(com.hanzhan.promotion.grpc.PromServ.BotDetail value) {
-        if (botsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureBotsIsMutable();
-          bots_.add(value);
-          onChanged();
-        } else {
-          botsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.hanzhan.promotion.grpc.BotDetail bots = 4;</code>
-       */
-      public Builder addBots(
-          int index, com.hanzhan.promotion.grpc.PromServ.BotDetail value) {
-        if (botsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureBotsIsMutable();
-          bots_.add(index, value);
-          onChanged();
-        } else {
-          botsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.hanzhan.promotion.grpc.BotDetail bots = 4;</code>
-       */
-      public Builder addBots(
           com.hanzhan.promotion.grpc.PromServ.BotDetail.Builder builderForValue) {
         if (botsBuilder_ == null) {
-          ensureBotsIsMutable();
-          bots_.add(builderForValue.build());
+          bots_ = builderForValue.build();
           onChanged();
         } else {
-          botsBuilder_.addMessage(builderForValue.build());
+          botsBuilder_.setMessage(builderForValue.build());
         }
+
         return this;
       }
       /**
-       * <code>repeated .com.hanzhan.promotion.grpc.BotDetail bots = 4;</code>
+       * <code>.com.hanzhan.promotion.grpc.BotDetail bots = 3;</code>
        */
-      public Builder addBots(
-          int index, com.hanzhan.promotion.grpc.PromServ.BotDetail.Builder builderForValue) {
+      public Builder mergeBots(com.hanzhan.promotion.grpc.PromServ.BotDetail value) {
         if (botsBuilder_ == null) {
-          ensureBotsIsMutable();
-          bots_.add(index, builderForValue.build());
+          if (bots_ != null) {
+            bots_ =
+              com.hanzhan.promotion.grpc.PromServ.BotDetail.newBuilder(bots_).mergeFrom(value).buildPartial();
+          } else {
+            bots_ = value;
+          }
           onChanged();
         } else {
-          botsBuilder_.addMessage(index, builderForValue.build());
+          botsBuilder_.mergeFrom(value);
         }
+
         return this;
       }
       /**
-       * <code>repeated .com.hanzhan.promotion.grpc.BotDetail bots = 4;</code>
-       */
-      public Builder addAllBots(
-          java.lang.Iterable<? extends com.hanzhan.promotion.grpc.PromServ.BotDetail> values) {
-        if (botsBuilder_ == null) {
-          ensureBotsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, bots_);
-          onChanged();
-        } else {
-          botsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .com.hanzhan.promotion.grpc.BotDetail bots = 4;</code>
+       * <code>.com.hanzhan.promotion.grpc.BotDetail bots = 3;</code>
        */
       public Builder clearBots() {
         if (botsBuilder_ == null) {
-          bots_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bots_ = null;
           onChanged();
         } else {
-          botsBuilder_.clear();
+          bots_ = null;
+          botsBuilder_ = null;
         }
+
         return this;
       }
       /**
-       * <code>repeated .com.hanzhan.promotion.grpc.BotDetail bots = 4;</code>
+       * <code>.com.hanzhan.promotion.grpc.BotDetail bots = 3;</code>
        */
-      public Builder removeBots(int index) {
-        if (botsBuilder_ == null) {
-          ensureBotsIsMutable();
-          bots_.remove(index);
-          onChanged();
-        } else {
-          botsBuilder_.remove(index);
-        }
-        return this;
+      public com.hanzhan.promotion.grpc.PromServ.BotDetail.Builder getBotsBuilder() {
+        
+        onChanged();
+        return getBotsFieldBuilder().getBuilder();
       }
       /**
-       * <code>repeated .com.hanzhan.promotion.grpc.BotDetail bots = 4;</code>
+       * <code>.com.hanzhan.promotion.grpc.BotDetail bots = 3;</code>
        */
-      public com.hanzhan.promotion.grpc.PromServ.BotDetail.Builder getBotsBuilder(
-          int index) {
-        return getBotsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .com.hanzhan.promotion.grpc.BotDetail bots = 4;</code>
-       */
-      public com.hanzhan.promotion.grpc.PromServ.BotDetailOrBuilder getBotsOrBuilder(
-          int index) {
-        if (botsBuilder_ == null) {
-          return bots_.get(index);  } else {
-          return botsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .com.hanzhan.promotion.grpc.BotDetail bots = 4;</code>
-       */
-      public java.util.List<? extends com.hanzhan.promotion.grpc.PromServ.BotDetailOrBuilder> 
-           getBotsOrBuilderList() {
+      public com.hanzhan.promotion.grpc.PromServ.BotDetailOrBuilder getBotsOrBuilder() {
         if (botsBuilder_ != null) {
-          return botsBuilder_.getMessageOrBuilderList();
+          return botsBuilder_.getMessageOrBuilder();
         } else {
-          return java.util.Collections.unmodifiableList(bots_);
+          return bots_ == null ?
+              com.hanzhan.promotion.grpc.PromServ.BotDetail.getDefaultInstance() : bots_;
         }
       }
       /**
-       * <code>repeated .com.hanzhan.promotion.grpc.BotDetail bots = 4;</code>
+       * <code>.com.hanzhan.promotion.grpc.BotDetail bots = 3;</code>
        */
-      public com.hanzhan.promotion.grpc.PromServ.BotDetail.Builder addBotsBuilder() {
-        return getBotsFieldBuilder().addBuilder(
-            com.hanzhan.promotion.grpc.PromServ.BotDetail.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .com.hanzhan.promotion.grpc.BotDetail bots = 4;</code>
-       */
-      public com.hanzhan.promotion.grpc.PromServ.BotDetail.Builder addBotsBuilder(
-          int index) {
-        return getBotsFieldBuilder().addBuilder(
-            index, com.hanzhan.promotion.grpc.PromServ.BotDetail.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .com.hanzhan.promotion.grpc.BotDetail bots = 4;</code>
-       */
-      public java.util.List<com.hanzhan.promotion.grpc.PromServ.BotDetail.Builder> 
-           getBotsBuilderList() {
-        return getBotsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
+      private com.google.protobuf.SingleFieldBuilderV3<
           com.hanzhan.promotion.grpc.PromServ.BotDetail, com.hanzhan.promotion.grpc.PromServ.BotDetail.Builder, com.hanzhan.promotion.grpc.PromServ.BotDetailOrBuilder> 
           getBotsFieldBuilder() {
         if (botsBuilder_ == null) {
-          botsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          botsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               com.hanzhan.promotion.grpc.PromServ.BotDetail, com.hanzhan.promotion.grpc.PromServ.BotDetail.Builder, com.hanzhan.promotion.grpc.PromServ.BotDetailOrBuilder>(
-                  bots_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  getBots(),
                   getParentForChildren(),
                   isClean());
           bots_ = null;
@@ -3897,41 +3368,41 @@ public final class PromServ {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:com.hanzhan.promotion.grpc.BotOptResponse)
+      // @@protoc_insertion_point(builder_scope:com.hanzhan.promotion.grpc.BotCreateResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:com.hanzhan.promotion.grpc.BotOptResponse)
-    private static final com.hanzhan.promotion.grpc.PromServ.BotOptResponse DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:com.hanzhan.promotion.grpc.BotCreateResponse)
+    private static final com.hanzhan.promotion.grpc.PromServ.BotCreateResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.hanzhan.promotion.grpc.PromServ.BotOptResponse();
+      DEFAULT_INSTANCE = new com.hanzhan.promotion.grpc.PromServ.BotCreateResponse();
     }
 
-    public static com.hanzhan.promotion.grpc.PromServ.BotOptResponse getDefaultInstance() {
+    public static com.hanzhan.promotion.grpc.PromServ.BotCreateResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<BotOptResponse>
-        PARSER = new com.google.protobuf.AbstractParser<BotOptResponse>() {
+    private static final com.google.protobuf.Parser<BotCreateResponse>
+        PARSER = new com.google.protobuf.AbstractParser<BotCreateResponse>() {
       @java.lang.Override
-      public BotOptResponse parsePartialFrom(
+      public BotCreateResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new BotOptResponse(input, extensionRegistry);
+        return new BotCreateResponse(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<BotOptResponse> parser() {
+    public static com.google.protobuf.Parser<BotCreateResponse> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<BotOptResponse> getParserForType() {
+    public com.google.protobuf.Parser<BotCreateResponse> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.hanzhan.promotion.grpc.PromServ.BotOptResponse getDefaultInstanceForType() {
+    public com.hanzhan.promotion.grpc.PromServ.BotCreateResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3943,15 +3414,15 @@ public final class PromServ {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_hanzhan_promotion_grpc_BotDetail_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_hanzhan_promotion_grpc_BotOptRequest_descriptor;
+    internal_static_com_hanzhan_promotion_grpc_BotCreateRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_hanzhan_promotion_grpc_BotOptRequest_fieldAccessorTable;
+      internal_static_com_hanzhan_promotion_grpc_BotCreateRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_hanzhan_promotion_grpc_BotOptResponse_descriptor;
+    internal_static_com_hanzhan_promotion_grpc_BotCreateResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_hanzhan_promotion_grpc_BotOptResponse_fieldAccessorTable;
+      internal_static_com_hanzhan_promotion_grpc_BotCreateResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -3968,21 +3439,19 @@ public final class PromServ {
       "c.BotTypeEnum\022\023\n\013chargeToken\030\005 \001(\t\0229\n\006st" +
       "atus\030\006 \001(\0162).com.hanzhan.promotion.grpc." +
       "BotStatusEnum\022\022\n\ncreateTime\030\024 \001(\003\022\022\n\nupd" +
-      "ateTime\030\025 \001(\003\"\330\001\n\rBotOptRequest\022\020\n\010botTo" +
-      "ken\030\001 \001(\t\022\016\n\006bindId\030\002 \001(\t\0226\n\006botOpt\030\003 \001(" +
-      "\0162&.com.hanzhan.promotion.grpc.BotOptEnu" +
-      "m\0229\n\006status\030\004 \001(\0162).com.hanzhan.promotio" +
-      "n.grpc.BotStatusEnum\0222\n\003bot\030\005 \001(\0132%.com." +
-      "hanzhan.promotion.grpc.BotDetail\"i\n\016BotO" +
-      "ptResponse\022\014\n\004code\030\001 \001(\005\022\024\n\014errorMessage" +
-      "\030\002 \001(\t\0223\n\004bots\030\004 \003(\0132%.com.hanzhan.promo" +
-      "tion.grpc.BotDetail*K\n\rBotStatusEnum\022\n\n\006" +
-      "UNKOWN\020\000\022\n\n\006ACTIVE\020\001\022\014\n\010INACTIVE\020\002\022\007\n\003DE" +
-      "L\020\003\022\013\n\007CHARGED\020\004*@\n\013BotTypeEnum\022\013\n\007WECHA" +
-      "TY\020\000\022\014\n\010DINGDING\020\002\022\010\n\004LARK\020\003\022\014\n\010WHATSAPP" +
-      "\020\004*K\n\nBotOptEnum\022\r\n\tUNKOWNOPT\020\000\022\t\n\005QUERY" +
-      "\020\001\022\n\n\006ONLINE\020\002\022\013\n\007OFFLINE\020\003\022\n\n\006CREATE\020\0042" +
-      "\014\n\nBotServiceb\006proto3"
+      "ateTime\030\025 \001(\003\"h\n\020BotCreateRequest\022\020\n\010bot" +
+      "Token\030\001 \001(\t\022\016\n\006bindId\030\002 \001(\t\0222\n\003bot\030\005 \001(\013" +
+      "2%.com.hanzhan.promotion.grpc.BotDetail\"" +
+      "c\n\021BotCreateResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003ms" +
+      "g\030\002 \001(\t\0223\n\004bots\030\003 \001(\0132%.com.hanzhan.prom" +
+      "otion.grpc.BotDetail*K\n\rBotStatusEnum\022\n\n" +
+      "\006UNKOWN\020\000\022\n\n\006ACTIVE\020\001\022\014\n\010INACTIVE\020\002\022\007\n\003D" +
+      "EL\020\003\022\013\n\007CHARGED\020\004*@\n\013BotTypeEnum\022\013\n\007WECH" +
+      "ATY\020\000\022\014\n\010DINGDING\020\002\022\010\n\004LARK\020\003\022\014\n\010WHATSAP" +
+      "P\020\0042x\n\nBotService\022j\n\tcreateBot\022,.com.han" +
+      "zhan.promotion.grpc.BotCreateRequest\032-.c" +
+      "om.hanzhan.promotion.grpc.BotCreateRespo" +
+      "nse\"\000b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3994,18 +3463,18 @@ public final class PromServ {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_hanzhan_promotion_grpc_BotDetail_descriptor,
         new java.lang.String[] { "BotId", "BotToken", "BandWechatyId", "BotType", "ChargeToken", "Status", "CreateTime", "UpdateTime", });
-    internal_static_com_hanzhan_promotion_grpc_BotOptRequest_descriptor =
+    internal_static_com_hanzhan_promotion_grpc_BotCreateRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_com_hanzhan_promotion_grpc_BotOptRequest_fieldAccessorTable = new
+    internal_static_com_hanzhan_promotion_grpc_BotCreateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_hanzhan_promotion_grpc_BotOptRequest_descriptor,
-        new java.lang.String[] { "BotToken", "BindId", "BotOpt", "Status", "Bot", });
-    internal_static_com_hanzhan_promotion_grpc_BotOptResponse_descriptor =
+        internal_static_com_hanzhan_promotion_grpc_BotCreateRequest_descriptor,
+        new java.lang.String[] { "BotToken", "BindId", "Bot", });
+    internal_static_com_hanzhan_promotion_grpc_BotCreateResponse_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_com_hanzhan_promotion_grpc_BotOptResponse_fieldAccessorTable = new
+    internal_static_com_hanzhan_promotion_grpc_BotCreateResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_hanzhan_promotion_grpc_BotOptResponse_descriptor,
-        new java.lang.String[] { "Code", "ErrorMessage", "Bots", });
+        internal_static_com_hanzhan_promotion_grpc_BotCreateResponse_descriptor,
+        new java.lang.String[] { "Code", "Msg", "Bots", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

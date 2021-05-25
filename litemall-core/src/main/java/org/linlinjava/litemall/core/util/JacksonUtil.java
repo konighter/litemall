@@ -167,7 +167,7 @@ public class JacksonUtil {
         try {
             return objectMapper.writeValueAsString(data);
         } catch (JsonProcessingException e) {
-            e.printStackTrace();
+            logger.error(e.getMessage(), e);
         }
         return null;
     }
